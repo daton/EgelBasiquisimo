@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         recucleView.layoutManager= LinearLayoutManager(this)
 
 
-        Toast.makeText(applicationContext,"Valor es este:"+chingaTuPutaCogidaMadreElQueLoLea().size, Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext,"Valor:"+chingaTuPutaCogidaMadreElQueLoLea().size, Toast.LENGTH_LONG).show()
     }
 
 
