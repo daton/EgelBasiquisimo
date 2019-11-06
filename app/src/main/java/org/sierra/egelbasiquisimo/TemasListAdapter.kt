@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -16,8 +17,9 @@ class TemasListAdapter internal constructor(
 
     inner class TemasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nombreItemView: TextView = itemView.findViewById(R.id.textoPregunta)
-
         //Aqui irian otras vistas invocadas con el view  elemal y el id
+        val radio1View: RadioButton=itemView.findViewById(R.id.radioButton1)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TemasViewHolder {
@@ -28,6 +30,7 @@ class TemasListAdapter internal constructor(
     override fun onBindViewHolder(holder: TemasViewHolder, position: Int) {
         val current = temas[position]
         holder.nombreItemView.text = current.pregunta
+        holder.radio1View.text=current.opciones[0].titulo
     }
 
     internal fun setTemas(temas: List<Temas>) {
