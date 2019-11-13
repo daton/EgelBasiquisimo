@@ -1,7 +1,9 @@
 package org.sierra.egelbasiquisimo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -41,8 +43,11 @@ class MainActivity : AppCompatActivity() {
 val temas=ArrayList<String>()
         val numero=ArrayList<Int>()
 
-        temas.add("A1. Diagnóstico del problema")
-        temas.add("A2. Modelado de los requerimientos")
+        temas.add("A1")
+        temas.add("A2")
+        temas.add("B1");
+        temas.add("B2");
+        temas.add("B3");
 
         numero.add(2);
         numero.add(4);
@@ -106,7 +111,15 @@ val temas=ArrayList<String>()
 
         //Ahora al oprimir el boton obtenemos el tema y las preguntas
         empezar.setOnClickListener {
-            Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero", Toast.LENGTH_LONG).show()
+
+            //Invocamos el metodo pasandole como argumentos los valores del tema y el numero de rpeguntas seleccioando
+          var miCuestioanrio=  buscarPorTemayNumeroDePreguntas(miTema, miNumero)
+            Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero Las preguntas halladas son ${miCuestioanrio.size}", Toast.LENGTH_LONG).show()
+
+            //Nos vamos al otro layout
+            var i= Intent(this, ExamenActivity::class.java)
+            startActivity(i)
+
         }
 
 
@@ -116,7 +129,7 @@ val temas=ArrayList<String>()
     }
 
 
-    fun chingaTuPutaCogidaMadreElQueLoLea(tema:String, numero:Int):List<Temas>{
+    fun buscarPorTemayNumeroDePreguntas(area:String, numero:Int):List<Temas>{
 
         var valorJson=  application.assets.open("temas.json").bufferedReader().use {
             it.readLine()
@@ -125,11 +138,30 @@ val temas=ArrayList<String>()
         val adapter: JsonAdapter<Array<Temas>> = moshi.adapter(Array<Temas>::class.java)
         val preguntas = adapter.fromJson(valorJson)
         val pregunta=preguntas?.get(0)
+        //La siguiente variable contiene el arreglo de rpegunats en su totalidad con todos sus temas
+        //debemos de buscar el tema y el numero de rpeguntas de dicho teme
+        //tal como se muestra en los argumentos del del metodo
         val preguntasListas=preguntas?.toList()
+ var indice=0
+        var  cuestionario:List<Temas>
+        cuestionario=ArrayList<Temas>()
 
+        //Algoritomo para buscar:
+        preguntasListas?.forEach{
+            //depuramos
+         //   Log.i("NOO","pREGUNTA ENCONTRADA ${it.pregunta}vuelta numero $indice para el tema $area" )
+            if(it.area==area){
+                if(indice<numero){
+                    Log.i("NOO", "Titulo de la pregunta ${it.pregunta}")
+                    cuestionario.add(it)
+                    indice++;
+                }
+            }
+        }
 
+        //Otro algoritmo para cambiar el orden de las opciones
+        Globales.cuestionario=cuestionario
 
-
-        return preguntasListas!!
-    }
+        return cuestionario!!
+    } //Aqui termina la funcion buscarPorTemayNumeroDePreguntas
 }
