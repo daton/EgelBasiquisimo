@@ -1,6 +1,7 @@
 package org.sierra.egelbasiquisimo
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,9 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_inicio.*
+import android.widget.TextView
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +31,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_inicio)
+        //Ocultar la barra de arriba
+        supportActionBar?.hide()
+
 /**
         val recucleView=  recyclerview as RecyclerView
         val adaptador=TemasListAdapter(this)
@@ -80,6 +87,10 @@ val temas=ArrayList<String>()
                 var item=        parent?.getItemAtPosition(position)
                 //El siguiente funciona bien
 
+                (parent?.getChildAt(0) as TextView).setTextColor(Color.WHITE)
+               // (parent?.getChildAt(0) as TextView).textSize = 5f
+
+
                 miTema=item.toString()
                 //  Toast.makeText(applicationContext,"Seleccionaste este elemento "+item,Toast.LENGTH_SHORT).show()
                 // if(item=="Otros") textoOtos.visibility=View.VISIBLE
@@ -99,6 +110,7 @@ val temas=ArrayList<String>()
                 var item=        parent?.getItemAtPosition(position)
                 //El siguiente funciona bien
                 //Capturamos el valor seleccioando y lo pasamos al variable miTema
+                (parent?.getChildAt(0) as TextView).setTextColor(Color.WHITE)
                 miNumero=item.toString().toInt()
                 //Toast.makeText(applicationContext,"Seleccionaste este elemento "+item,Toast.LENGTH_SHORT).show()
                 // if(item=="Otros") textoOtos.visibility=View.VISIBLE
@@ -117,8 +129,9 @@ val temas=ArrayList<String>()
             Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero Las preguntas halladas son ${miCuestioanrio.size}", Toast.LENGTH_LONG).show()
 
             //Nos vamos al otro layout
-            var i= Intent(this, ExamenActivity::class.java)
+            var i= Intent(this, ExamenUnaPreguntaActivity::class.java)
             startActivity(i)
+            finish()
 
         }
 
