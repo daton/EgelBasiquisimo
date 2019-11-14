@@ -11,7 +11,7 @@ class ResultadoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultado)
         var calificacion=(Globales.aciertos)!!.div(1.0f*Globales.cuestionario!!.size)*10.0f
-  textoResultado.setText("Aciertos ${Globales.aciertos} Calificación $calificacion")
+  textoResultado.setText("Aciertos: ${Globales.aciertos} \n\n Calificación: $calificacion")
 
         regresar.setOnClickListener {
             var i= Intent(applicationContext, MainActivity::class.java)

@@ -3,9 +3,11 @@ package org.sierra.egelbasiquisimo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.examen_una_pregunta.*
+import java.util.LinkedHashSet
 
 class ExamenUnaPreguntaActivity : AppCompatActivity() {
 
@@ -15,6 +17,9 @@ class ExamenUnaPreguntaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.examen_una_pregunta)
+
+        //Ocultar la barra de arriba
+        supportActionBar?.hide()
         //Mostramos la primer pregunta
 
    siguientePregunta(indice);
@@ -68,6 +73,11 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
 
         var primeraPregunta=preguntas?.get(indice);
 
+        /*
+        *ESTA PARTE DEL CODIGOM INVOCA EL METODO ordenarOpciones de la pregunta vigente
+         */
+        primeraPregunta!!.opciones=ordenarOpciones(primeraPregunta!!.opciones)
+
         textoNumeroPreg.setText("Pregunta $numPregunta de ${Globales.cuestionario!!.size} ")
         textoPregunta.setText(primeraPregunta?.pregunta)
         //Ajustamos los radiobuttons
@@ -88,6 +98,39 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
             }
         }
         return tituloCorrecta
+    }
+
+
+    fun ordenarOpciones(opciones:List<Opcione>):List<Opcione>{
+        // var arreglo:List<Int>
+        // arreglo= ArrayList<Int>()
+        //Genermos un set
+        Log.i("JA","que paso")
+
+        //La siguiente variable es el arreglo de numeros del 1 al 3
+        //desordenados
+        var numeros:Set<Int>
+        numeros= LinkedHashSet<Int>()
+
+
+        while(numeros.size<4){
+
+
+            val numerito = (0..3).random()
+
+            numeros.add(numerito)
+        }//ya se genero ese arreglo
+
+        //El nuevo orden de opciones
+
+        var opcionesNuevas:List<Opcione>
+        opcionesNuevas=ArrayList<Opcione>()
+
+        for( i in 0..3){
+
+            opcionesNuevas.add(opciones.get(numeros.elementAt(i)))
+        }
+        return  opcionesNuevas
     }
 
 

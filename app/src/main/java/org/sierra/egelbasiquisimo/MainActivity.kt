@@ -16,8 +16,9 @@ import com.squareup.moshi.Moshi
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_inicio.*
 import android.widget.TextView
-
-
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashSet
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.layout_inicio)
         //Ocultar la barra de arriba
         supportActionBar?.hide()
+
+
 
 /**
         val recucleView=  recyclerview as RecyclerView
@@ -55,6 +58,8 @@ val temas=ArrayList<String>()
         temas.add("B1");
         temas.add("B2");
         temas.add("B3");
+        temas.add("C1");
+        temas.add("C2");
 
         numero.add(2);
         numero.add(4);
@@ -126,7 +131,9 @@ val temas=ArrayList<String>()
 
             //Invocamos el metodo pasandole como argumentos los valores del tema y el numero de rpeguntas seleccioando
           var miCuestioanrio=  buscarPorTemayNumeroDePreguntas(miTema, miNumero)
-            Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero Las preguntas halladas son ${miCuestioanrio.size}", Toast.LENGTH_LONG).show()
+
+           //Nos manda un mensaje en pantalla que nos indica el tema que escogimos y el número de preguntas que seleccionamos
+          //  Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero Las preguntas halladas son ${miCuestioanrio.size}", Toast.LENGTH_LONG).show()
 
             //Nos vamos al otro layout
             var i= Intent(this, ExamenUnaPreguntaActivity::class.java)
@@ -139,6 +146,29 @@ val temas=ArrayList<String>()
         //Aqui nos dirijiremos al que ya teniamos
 
 
+    }
+
+    //Algoritmo de ordenamiento para opciones
+    fun ordenarOpciones(){
+       // var arreglo:List<Int>
+       // arreglo= ArrayList<Int>()
+        //Genermos un set
+        Log.i("JA","que paso")
+
+        var numeros:Set<Int>
+        numeros=LinkedHashSet<Int>()
+
+
+        while(numeros.size<4){
+
+
+            val numerito = (0..3).random()
+
+            numeros.add(numerito)
+        }
+        numeros.forEach {
+            Log.i("JA", "VALOR:${it}")
+        }
     }
 
 
