@@ -130,7 +130,7 @@ val temas=ArrayList<String>()
         empezar.setOnClickListener {
 
             //Invocamos el metodo pasandole como argumentos los valores del tema y el numero de rpeguntas seleccioando
-          var miCuestioanrio=  buscarPorTemayNumeroDePreguntas(miTema, miNumero)
+       buscarPorTemayNumeroDePreguntas(miTema)
 
            //Nos manda un mensaje en pantalla que nos indica el tema que escogimos y el número de preguntas que seleccionamos
           //  Toast.makeText(applicationContext, "Tema es $miTema y el numero de preg es $miNumero Las preguntas halladas son ${miCuestioanrio.size}", Toast.LENGTH_LONG).show()
@@ -172,7 +172,7 @@ val temas=ArrayList<String>()
     }
 
 
-    fun buscarPorTemayNumeroDePreguntas(area:String, numero:Int):List<Temas>{
+    fun buscarPorTemayNumeroDePreguntas(area:String):List<Temas>{
 
         var valorJson=  application.assets.open("temas.json").bufferedReader().use {
             it.readLine()
@@ -180,7 +180,7 @@ val temas=ArrayList<String>()
         val moshi: Moshi = Moshi.Builder().build()
         val adapter: JsonAdapter<Array<Temas>> = moshi.adapter(Array<Temas>::class.java)
         val preguntas = adapter.fromJson(valorJson)
-        val pregunta=preguntas?.get(0)
+
         //La siguiente variable contiene el arreglo de rpegunats en su totalidad con todos sus temas
         //debemos de buscar el tema y el numero de rpeguntas de dicho teme
         //tal como se muestra en los argumentos del del metodo
@@ -194,19 +194,21 @@ val temas=ArrayList<String>()
             //depuramos
          //   Log.i("NOO","pREGUNTA ENCONTRADA ${it.pregunta}vuelta numero $indice para el tema $area" )
             if(it.area==area){
-                if(indice<numero){
+
                     Log.i("NOO", "Titulo de la pregunta ${it.pregunta}")
                     (cuestionario as ArrayList<Temas>).add(it)
                     indice++;
-                }
+
             }
+
+            Log.i("NOO", "tamaño total de este tema: ${(cuestionario as ArrayList<Temas>).size}")
         }
 
         //Otro algoritmo para cambiar el orden de las opciones
 
 
       //Aqui invocamos el metodo para generar las preguntas aleatoriamente:
-  cuestionario=organizarPreguntasAleatorias(numero, cuestionario as ArrayList<Temas>)
+  cuestionario=organizarPreguntasAleatorias(miNumero, cuestionario as ArrayList<Temas>)
 
         Globales.cuestionario=cuestionario
         return cuestionario!!
@@ -219,10 +221,10 @@ val temas=ArrayList<String>()
         var numeros:Set<Int>
         numeros= LinkedHashSet<Int>()
 
-        while(numeros.size<preguntas.size){
+        while(numeros.size<numero){
 
 
-            val numerito = (0..preguntas.size-1).random()
+            val numerito = (0..cuestionario!!.size-1).random()
 
             numeros.add(numerito)
         }
@@ -232,7 +234,7 @@ val temas=ArrayList<String>()
         var preguntasNuevas:List<Temas>
         preguntasNuevas=ArrayList<Temas>()
 
-        for( i in 0..preguntas.size-1){
+        for( i in 0..numero-1){
 
             preguntasNuevas.add(preguntas.get(numeros.elementAt(i)))
         }
