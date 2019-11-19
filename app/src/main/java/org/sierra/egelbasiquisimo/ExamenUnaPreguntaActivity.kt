@@ -133,5 +133,8 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
         return  opcionesNuevas
     }
 
+    //El siguiente es para generar el numero de reactivos aleatoriamente
+
+
 
 }

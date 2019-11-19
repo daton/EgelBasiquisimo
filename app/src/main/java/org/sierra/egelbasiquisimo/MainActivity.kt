@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     //estas las pasaremos al json
     var miTema=String()
     var miNumero:Int=0
-
+    var  cuestionario:List<Temas>?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -138,7 +138,7 @@ val temas=ArrayList<String>()
             //Nos vamos al otro layout
             var i= Intent(this, ExamenUnaPreguntaActivity::class.java)
             startActivity(i)
-            finish()
+           // finish()
 
         }
 
@@ -186,7 +186,7 @@ val temas=ArrayList<String>()
         //tal como se muestra en los argumentos del del metodo
         val preguntasListas=preguntas?.toList()
  var indice=0
-        var  cuestionario:List<Temas>
+
         cuestionario=ArrayList<Temas>()
 
         //Algoritomo para buscar:
@@ -196,15 +196,46 @@ val temas=ArrayList<String>()
             if(it.area==area){
                 if(indice<numero){
                     Log.i("NOO", "Titulo de la pregunta ${it.pregunta}")
-                    cuestionario.add(it)
+                    (cuestionario as ArrayList<Temas>).add(it)
                     indice++;
                 }
             }
         }
 
         //Otro algoritmo para cambiar el orden de las opciones
-        Globales.cuestionario=cuestionario
 
+
+      //Aqui invocamos el metodo para generar las preguntas aleatoriamente:
+  cuestionario=organizarPreguntasAleatorias(numero, cuestionario as ArrayList<Temas>)
+
+        Globales.cuestionario=cuestionario
         return cuestionario!!
     } //Aqui termina la funcion buscarPorTemayNumeroDePreguntas
+
+
+    //El siguiente metodo me genera las preguntas alteariamente basandonos en el tema y en el numero de preguntas
+    fun organizarPreguntasAleatorias(numero:Int,preguntas:List<Temas>):List<Temas>{
+
+        var numeros:Set<Int>
+        numeros= LinkedHashSet<Int>()
+
+        while(numeros.size<preguntas.size){
+
+
+            val numerito = (0..preguntas.size-1).random()
+
+            numeros.add(numerito)
+        }
+
+        //El nuevo orden de preguntas
+
+        var preguntasNuevas:List<Temas>
+        preguntasNuevas=ArrayList<Temas>()
+
+        for( i in 0..preguntas.size-1){
+
+            preguntasNuevas.add(preguntas.get(numeros.elementAt(i)))
+        }
+        return  preguntasNuevas
+    }
 }
