@@ -5,8 +5,8 @@ data class Temas(
     val claveProfesor: Int,
     val estaBuena: Boolean,
     val id: String,
-    val opciones: List<Opcione>,
-    val pregunta: String,
+    var opciones: List<Opcione>,
+    var pregunta: String,
     val tema: String,
     val validado: Boolean
 )
