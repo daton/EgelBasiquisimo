@@ -58,6 +58,7 @@ val temas=ArrayList<String>()
         temas.add("B1");
         temas.add("B2");
         temas.add("B3");
+        temas.add("CI1");
         temas.add("C1");
         temas.add("C2");
 
