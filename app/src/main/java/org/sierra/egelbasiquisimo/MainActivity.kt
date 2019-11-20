@@ -145,6 +145,11 @@ val temas=ArrayList<String>()
 
 
         //Aqui nos dirijiremos al que ya teniamos
+        //Aqui vamos al temario
+        temario.setOnClickListener {
+            var i=Intent(applicationContext, TemarioActivity::class.java)
+            startActivity(i)
+        }
 
 
     }
