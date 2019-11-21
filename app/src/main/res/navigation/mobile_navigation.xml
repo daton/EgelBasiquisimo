@@ -8,31 +8,31 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="org.sierra.egelbasiquisimo.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Temario"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="org.sierra.egelbasiquisimo.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Tema A."
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="org.sierra.egelbasiquisimo.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Tema B."
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_tools"
         android:name="org.sierra.egelbasiquisimo.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
+        android:label="Tema C."
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
         android:name="org.sierra.egelbasiquisimo.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="Tema D."
         tools:layout="@layout/fragment_share" />
 
     <fragment
