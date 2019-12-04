@@ -18,5 +18,11 @@ class ResultadoActivity : AppCompatActivity() {
             startActivity(i)
             finish()
         }
+
+        retro.setOnClickListener {
+            var i=Intent(applicationContext, ExamenActivity::class.java )
+            startActivity(i)
+            finish()
+        }
     }
 }

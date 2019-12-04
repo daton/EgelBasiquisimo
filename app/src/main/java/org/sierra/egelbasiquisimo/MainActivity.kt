@@ -130,6 +130,8 @@ val temas=ArrayList<String>()
         //Ahora al oprimir el boton obtenemos el tema y las preguntas
         empezar.setOnClickListener {
 
+
+            Globales.cuestionarioMalas=ArrayList()
             //Invocamos el metodo pasandole como argumentos los valores del tema y el numero de rpeguntas seleccioando
        buscarPorTemayNumeroDePreguntas(miTema)
 
@@ -194,6 +196,8 @@ val temas=ArrayList<String>()
  var indice=0
 
         cuestionario=ArrayList<Temas>()
+        //Iniciamos el cuestionario de pregyntas malas
+
 
         //Algoritomo para buscar:
         preguntasListas?.forEach{

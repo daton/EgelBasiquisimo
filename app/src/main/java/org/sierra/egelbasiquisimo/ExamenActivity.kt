@@ -1,5 +1,6 @@
 package org.sierra.egelbasiquisimo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -22,14 +23,17 @@ class ExamenActivity : AppCompatActivity() {
         val recucleView=  recyclerview as RecyclerView
         val adaptador=TemasListAdapter(this)
         recucleView.adapter=adaptador
-        adaptador.setTemas(Globales.cuestionario!!)
+        adaptador.setTemas(Globales.cuestionarioMalas!!)
 
         recucleView.layoutManager= LinearLayoutManager(this)
 
 
-        Toast.makeText(applicationContext,"Valor:"+Globales.cuestionario!!.size, Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext,"Valor:"+Globales.cuestionarioMalas!!.size, Toast.LENGTH_LONG).show()
 
-
+regresar.setOnClickListener {
+    var i= Intent(applicationContext, MainActivity::class.java)
+    startActivity(i)
+}
 
     }
 }

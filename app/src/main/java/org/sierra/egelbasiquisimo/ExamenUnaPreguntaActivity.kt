@@ -39,6 +39,8 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
         ).text == checarAcierto(Globales.cuestionario!!.get(indice))
     ) {
         aciertos++
+    }else{
+        Globales.cuestionarioMalas.add(Globales.cuestionario!!.get(indice))
     }
 
     //Limpiamos el radioGroup antes de mostrar la rpegunta siguiente
@@ -92,11 +94,14 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
 
     fun checarAcierto(pregunta:Temas):String{
         var tituloCorrecta="";
+
         pregunta.opciones.forEach {
             if(it.acierto){
               tituloCorrecta=  it.titulo
+
             }
         }
+
         return tituloCorrecta
     }
 

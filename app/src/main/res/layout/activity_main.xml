@@ -19,14 +19,14 @@
         tools:listitem="@layout/recycler_view" />
 
     <Button
-        android:id="@+id/Evaluar"
+        android:id="@+id/regresar"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:background="@color/colorPrimary"
-        android:text="Evaluar"
+        android:text="Regresar"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
