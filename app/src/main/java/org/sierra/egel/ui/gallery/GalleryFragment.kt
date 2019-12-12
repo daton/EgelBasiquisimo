@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo.ui.gallery
+package org.sierra.egel.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import org.sierra.egelbasiquisimo.R
+import org.sierra.egel.R
+
 
 class GalleryFragment : Fragment() {
 

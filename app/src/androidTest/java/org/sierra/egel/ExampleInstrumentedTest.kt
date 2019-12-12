@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo
+package org.sierra.egel
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

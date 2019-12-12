@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="org.sierra.egelbasiquisimo.ui.home.HomeFragment"
+        android:name="org.sierra.egel.ui.home.HomeFragment"
         android:label="Temario"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="org.sierra.egelbasiquisimo.ui.gallery.GalleryFragment"
+        android:name="org.sierra.egel.ui.gallery.GalleryFragment"
         android:label="Tema A."
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="org.sierra.egelbasiquisimo.ui.slideshow.SlideshowFragment"
+        android:name="org.sierra.egel.ui.slideshow.SlideshowFragment"
         android:label="Tema B."
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="org.sierra.egelbasiquisimo.ui.tools.ToolsFragment"
+        android:name="org.sierra.egel.ui.tools.ToolsFragment"
         android:label="Tema C."
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="org.sierra.egelbasiquisimo.ui.share.ShareFragment"
+        android:name="org.sierra.egel.ui.share.ShareFragment"
         android:label="Tema D."
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="org.sierra.egelbasiquisimo.ui.send.SendFragment"
+        android:name="org.sierra.egel.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 </navigation>

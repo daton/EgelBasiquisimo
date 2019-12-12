@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.sierra.egelbasiquisimo">
+    package="org.sierra.egel">
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,13 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".TemarioActivity"
+            android:name="org.sierra.egel.TemarioActivity"
             android:label="@string/title_activity_temario"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ResultadoActivity" />
-        <activity android:name=".ExamenUnaPreguntaActivity" />
-        <activity android:name=".ExamenActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="org.sierra.egel.ResultadoActivity" />
+        <activity android:name="org.sierra.egel.ExamenUnaPreguntaActivity" />
+        <activity android:name="org.sierra.egel.ExamenActivity" />
+        <activity android:name="org.sierra.egel.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

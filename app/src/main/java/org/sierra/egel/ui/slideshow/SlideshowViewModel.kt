@@ -1,13 +1,13 @@
-package org.sierra.egelbasiquisimo.ui.home
+package org.sierra.egel.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class SlideshowViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Estructura general del EGEL-ISOFT por áreas"
+        value = "B.- Desarrollo e implementación de aplicaciones computacionales"
     }
     val text: LiveData<String> = _text
 }

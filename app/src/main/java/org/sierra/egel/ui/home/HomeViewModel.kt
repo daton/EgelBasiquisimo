@@ -1,13 +1,13 @@
-package org.sierra.egelbasiquisimo.ui.share
+package org.sierra.egel.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ShareViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "D.Implementaciónde redes, bases de datos, sistemas operativosy lenguaje de desarrollo"
+        value = "Estructura general del EGEL-ISOFT por áreas"
     }
     val text: LiveData<String> = _text
 }

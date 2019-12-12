@@ -1,13 +1,13 @@
-package org.sierra.egelbasiquisimo.ui.slideshow
+package org.sierra.egel.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SlideshowViewModel : ViewModel() {
+class GalleryViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "B.- Desarrollo e implementación de aplicaciones computacionales"
+        value = "A.Análisis de sistemas de información"
     }
     val text: LiveData<String> = _text
 }

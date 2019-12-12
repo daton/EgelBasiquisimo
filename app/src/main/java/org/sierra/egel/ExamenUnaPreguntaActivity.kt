@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo
+package org.sierra.egel
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.examen_una_pregunta.*
+
 import java.util.LinkedHashSet
 
 class ExamenUnaPreguntaActivity : AppCompatActivity() {
@@ -58,7 +59,7 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
         siguientePregunta(indice)
     }else{
         //Pasamos los aciertos a la variable global acierto para que la compratamos en la activity de resultados
-        Globales.aciertos=aciertos
+        Globales.aciertos =aciertos
         var i=Intent(applicationContext, ResultadoActivity::class.java)
         startActivity(i)
         finish()
@@ -71,7 +72,7 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
 
     fun siguientePregunta( indice:Int){
 
-        var preguntas=Globales.cuestionario;
+        var preguntas= Globales.cuestionario;
 
         var primeraPregunta=preguntas?.get(indice);
 
@@ -92,7 +93,7 @@ if(radiogrupo.checkedRadioButtonId!=-1) {
 
     }
 
-    fun checarAcierto(pregunta:Temas):String{
+    fun checarAcierto(pregunta: Temas):String{
         var tituloCorrecta="";
 
         pregunta.opciones.forEach {

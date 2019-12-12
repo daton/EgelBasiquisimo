@@ -1,13 +1,13 @@
-package org.sierra.egelbasiquisimo.ui.gallery
+package org.sierra.egel.ui.send
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class SendViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "A.Análisis de sistemas de información"
+        value = "This is send Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo
+package org.sierra.egel
 
 import android.content.Intent
 import android.graphics.Color
@@ -16,6 +16,7 @@ import com.squareup.moshi.Moshi
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_inicio.*
 import android.widget.TextView
+
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
@@ -131,7 +132,7 @@ val temas=ArrayList<String>()
         empezar.setOnClickListener {
 
 
-            Globales.cuestionarioMalas=ArrayList()
+            Globales.cuestionarioMalas =ArrayList()
             //Invocamos el metodo pasandole como argumentos los valores del tema y el numero de rpeguntas seleccioando
        buscarPorTemayNumeroDePreguntas(miTema)
 
@@ -220,7 +221,7 @@ val temas=ArrayList<String>()
       //Aqui invocamos el metodo para generar las preguntas aleatoriamente:
   cuestionario=organizarPreguntasAleatorias(miNumero, cuestionario as ArrayList<Temas>)
 
-        Globales.cuestionario=cuestionario
+        Globales.cuestionario =cuestionario
         return cuestionario!!
     } //Aqui termina la funcion buscarPorTemayNumeroDePreguntas
 

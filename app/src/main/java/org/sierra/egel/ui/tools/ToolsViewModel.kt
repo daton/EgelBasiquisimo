@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo.ui.tools
+package org.sierra.egel.ui.tools
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

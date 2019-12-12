@@ -1,4 +1,4 @@
-package org.sierra.egelbasiquisimo
+package org.sierra.egel
 
 data class Temas(
     val area: String,
