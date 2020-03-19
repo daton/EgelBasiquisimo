@@ -38,6 +38,13 @@
     <fragment
         android:id="@+id/nav_send"
         android:name="org.sierra.egel.ui.guiaA.GuiaAFragment"
-        android:label="@string/menu_send"
+        android:label="GUÍA A"
         tools:layout="@layout/fragment_send" />
+    <fragment
+
+        android:id="@+id/nav_guiaB"
+        android:name="org.sierra.egel.ui.guiaB.GuiaBFragment"
+        android:label="GUÍA B"
+        tools:layout="@layout/fragment_guiab"
+        />
 </navigation>

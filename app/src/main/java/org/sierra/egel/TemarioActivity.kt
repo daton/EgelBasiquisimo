@@ -38,7 +38,8 @@ class TemarioActivity : AppCompatActivity() {
                 R.id.nav_slideshow,
                 R.id.nav_tools,
                 R.id.nav_share,
-                R.id.nav_send
+                R.id.nav_send,
+                R.id.nav_guiaB
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
