@@ -1,0 +1,24 @@
+h2{
+    color:black;
+    text-align: center;
+
+}
+h4{
+    color:black;
+
+
+}
+.centrar{
+display:block;
+margin-left:auto;
+margin-right:auto;
+width:80%;
+
+}
+.letra{
+    color:black;
+    text-align: justify;
+}
+.justificar{
+margin-left: 15px;
+}
