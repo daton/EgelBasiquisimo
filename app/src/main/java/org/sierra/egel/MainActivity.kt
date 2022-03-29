@@ -25,7 +25,7 @@ import kotlin.collections.HashSet
 class MainActivity : AppCompatActivity() {
 
     //Aqui capturaremos las variables obtenidas del spinner temas y spinner nnumero
-    //estas las pasaremos al json
+    //estas las pasaremos al json json
     var miTema=String()
     var miNumero:Int=0
     var  cuestionario:List<Temas>?=null
