@@ -35,8 +35,7 @@ class TemasListAdapter internal constructor(
         val current = temas[position]
         holder.nombreItemView.text = current.pregunta
 
-       // Log.i("XXX", "${current.opciones[0].acierto}  ${current.opciones[0].titulo}")
-      //  Log.i("XXX", "${current.opciones[1].acierto}  ${current.opciones[1].titulo}")
+       //     Log.i("XXX", "${current.opciones[1].acierto}  ${current.opciones[1].titulo}")
       //  Log.i("XXX", "${current.opciones[2].acierto} ${current.opciones[2].titulo}")
      //   Log.i("XXX", "${current.opciones[3].acierto} ${current.opciones[3].titulo}")
         //Lo anterior es para ver cual es la correcta
