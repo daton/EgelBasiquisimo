@@ -1,6 +1,7 @@
 package org.sierra.isoft
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,10 +34,23 @@ class TemasListAdapter internal constructor(
     override fun onBindViewHolder(holder: TemasViewHolder, position: Int) {
         val current = temas[position]
         holder.nombreItemView.text = current.pregunta
+
+       // Log.i("XXX", "${current.opciones[0].acierto}  ${current.opciones[0].titulo}")
+      //  Log.i("XXX", "${current.opciones[1].acierto}  ${current.opciones[1].titulo}")
+      //  Log.i("XXX", "${current.opciones[2].acierto} ${current.opciones[2].titulo}")
+     //   Log.i("XXX", "${current.opciones[3].acierto} ${current.opciones[3].titulo}")
+        //Lo anterior es para ver cual es la correcta
         holder.radio1View.text=current.opciones[0].titulo
+       if(current.opciones[0].acierto) holder.radio1View.isChecked=true
+
         holder.radio2View.text=current.opciones[1].titulo
+        if(current.opciones[1].acierto) holder.radio2View.isChecked=true
+
         holder.radio3View.text=current.opciones[2].titulo
+        if(current.opciones[2].acierto) holder.radio3View.isChecked=true
+
         holder.radio4View.text=current.opciones[3].titulo
+        if(current.opciones[3].acierto) holder.radio4View.isChecked=true
     }
 
     internal fun setTemas(temas: List<Temas>) {
