@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.sierra.isoft">
+    package="org.sierra.isoft" >
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/iconito"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme" >
         <activity
-            android:name="org.sierra.isoft.TemarioActivity"
+            android:name=".TemarioActivity"
+            android:exported="false"
             android:label="@string/title_activity_temario"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="org.sierra.isoft.ResultadoActivity" />
-        <activity android:name="org.sierra.isoft.ExamenUnaPreguntaActivity" />
-        <activity android:name="org.sierra.isoft.ExamenActivity" />
-        <activity android:name="org.sierra.isoft.MainActivity">
+        <activity android:name=".ResultadoActivity" />
+        <activity android:name=".ExamenUnaPreguntaActivity" />
+        <activity android:name=".ExamenActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

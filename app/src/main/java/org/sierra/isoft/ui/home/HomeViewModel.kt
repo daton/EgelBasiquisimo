@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Estructura general del EGEL-ISOFT por áreas"
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 }
